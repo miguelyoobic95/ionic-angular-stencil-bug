@@ -8,7 +8,7 @@ import { Component, Prop, Event, EventEmitter, Element } from '@stencil/core';
 export class YooButtonComponent {
 
     @Prop() text: string;
-    @Prop() disabled: boolean = false;
+    @Prop() disabled = false;
     @Prop() isLoading: boolean;
     @Prop() icon: string;
 
@@ -22,7 +22,6 @@ export class YooButtonComponent {
         }
     }
 
-
     renderButtonContent(): JSX.Element {
         return (
             <div class="value">
@@ -35,11 +34,23 @@ export class YooButtonComponent {
 
     render(): JSX.Element {
         return (
-            (
-            <button class={'container ' + (this.disabled ? 'disabled' : '')} disabled={this.disabled} onClick={() => this.click()}>
+            [
+                <button class={'container ' + (this.disabled ? 'disabled' : '')} disabled={this.disabled} onClick={() => this.click()}>
                     {this.renderButtonContent()}
-            </button>
-            )
+                </button>,
+                <ion-item-sliding>
+                    <ion-item>
+                        <div> Sliding Item</div>
+                    </ion-item>
+                    <ion-item-options>
+                        <button ion-button>
+                            <i class='heart'></i>
+                            <span>Test</span>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+
+            ]
         );
     }
 
