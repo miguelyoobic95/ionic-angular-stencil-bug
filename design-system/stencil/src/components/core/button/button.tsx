@@ -1,5 +1,5 @@
 import { Component, Prop, Event, EventEmitter, Element } from '@stencil/core';
-
+import '@ionic/core';
 @Component({
     tag: 'yoo-button',
     styleUrl: 'button.scss',
@@ -38,17 +38,19 @@ export class YooButtonComponent {
                 <button class={'container ' + (this.disabled ? 'disabled' : '')} disabled={this.disabled} onClick={() => this.click()}>
                     {this.renderButtonContent()}
                 </button>,
-                <ion-item-sliding>
-                    <ion-item>
-                        <div> Sliding Item</div>
-                    </ion-item>
-                    <ion-item-options>
-                        <button ion-button>
-                            <i class='heart'></i>
-                            <span>Test</span>
-                        </button>
-                    </ion-item-options>
-                </ion-item-sliding>
+                <ion-content>
+                    <ion-item-sliding>
+                        <ion-item>
+                            <div> Sliding Item</div>
+                        </ion-item>
+                        <ion-item-options>
+                            <button ion-button>
+                                <i class='heart'></i>
+                                <span>Test</span>
+                            </button>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-content>
 
             ]
         );

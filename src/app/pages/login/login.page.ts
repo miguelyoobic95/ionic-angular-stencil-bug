@@ -9,13 +9,12 @@ import { Router } from '@angular/router';
 export class LoginPage implements OnInit {
 
   constructor(private router: Router) {
-    this.router.navigate([`/tabs/`]);
+    this.router.navigateByUrl('tabs/(home:home)');
   }
 
   ngOnInit() {
   }
 
   login() {
-    this.router.navigate(['/tabs/']);
   }
 }
